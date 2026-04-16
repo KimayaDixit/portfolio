@@ -6,16 +6,18 @@
 }
 
 :root {
-  --pink:      #F75183;
-  --lavender:  #E9A4EB;
-  --white:     #ffffff;
-  --bg:        #0d0d0d;
-  --text:      #e8e8e8;
-  --font:      'Aldrich', sans-serif;
+  --pink:        #F75183;
+  --lavender:    #E9A4EB;
+  --white:       #ffffff;
+  --bg:          #0d0d0d;
+  --text:        #e8e8e8;
+  --font:        'Aldrich', sans-serif;
+  --header-h:    65px; /* approximate sticky header height */
 }
 
-html, body {
-  height: 100%;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
 }
 
 body {
@@ -28,49 +30,39 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Canvas ───────────────────────────────────────────────────── */
-#bg-canvas {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
+/* ── Sticky Header ────────────────────────────────────────────── */
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
 }
 
-/* ── Page wrapper ─────────────────────────────────────────────── */
-.page {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* ── Navigation ───────────────────────────────────────────────── */
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px 40px 0;
+  padding: 18px 40px 0;
 }
 
+/* ── Nav links ────────────────────────────────────────────────── */
 .nav-links {
   display: flex;
   gap: 32px;
   list-style: none;
 }
 
-/* All nav links default */
 .nav-links a {
   font-family: var(--font);
   font-size: 1rem;
-  color: var(--text);
+  color: var(--white);
   text-decoration: none;
   letter-spacing: 0.04em;
   -webkit-text-stroke: 0px transparent;
   transition: -webkit-text-stroke 0.15s, color 0.15s;
 }
 
-/* Active: Home — lavender colour + underline */
+/* Active state: lavender + underline */
 .nav-links .active a {
   color: var(--lavender);
   text-decoration: underline;
@@ -78,7 +70,7 @@ nav {
   text-decoration-color: var(--lavender);
 }
 
-/* Hover on non-active links: white text + lavender stroke 1px */
+/* Hover on non-active links */
 .nav-links li:not(.active) a:hover {
   color: var(--white);
   -webkit-text-stroke: 1px var(--lavender);
@@ -86,7 +78,7 @@ nav {
 
 /* ── Logo ─────────────────────────────────────────────────────── */
 .logo img {
-  height: 36px;
+  height: 34px;
   width: auto;
   display: block;
 }
@@ -95,16 +87,23 @@ nav {
 .nav-rule {
   height: 2px;
   background: var(--lavender);
-  margin: 14px 0 0;
+  margin-top: 14px;
 }
 
-/* ── Hero ─────────────────────────────────────────────────────── */
+/* ── Main scrollable area ─────────────────────────────────────── */
 main {
   flex: 1;
   display: flex;
+  flex-direction: column;
+}
+
+/* ── Home Section ─────────────────────────────────────────────── */
+#home {
+  min-height: calc(100vh - var(--header-h));
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 24px 20px;
+  padding: 40px 24px;
 }
 
 .hero {
@@ -112,7 +111,6 @@ main {
   max-width: 900px;
 }
 
-/* White fill + pink stroke, no glow */
 .hero-name {
   font-family: var(--font);
   font-size: clamp(2.8rem, 8vw, 5.2rem);
@@ -144,10 +142,87 @@ main {
   font-family: var(--font);
   font-size: clamp(0.85rem, 2vw, 1rem);
   line-height: 1.85;
-  color: var(--text);
+  color: var(--white);
   max-width: 720px;
   margin: 0 auto;
   letter-spacing: 0.02em;
+}
+
+/* ── Projects Section ─────────────────────────────────────────── */
+#projects {
+  padding: 60px 48px 80px;
+}
+
+.section-heading {
+  font-family: var(--font);
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: 0.06em;
+  margin-bottom: 48px;
+  text-align: left;
+}
+
+/* ── Project rows ─────────────────────────────────────────────── */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.project-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Row 2 — image right, title left */
+.project-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* ── Project image ────────────────────────────────────────────── */
+.project-image-link {
+  flex: 0 0 240px;
+  display: block;
+  transition: filter 0.3s ease;
+  /* Grey placeholder background for when image file isn't present */
+  background: #bbb;
+  line-height: 0; /* removes inline gap */
+}
+
+.project-image-link:hover {
+  filter: drop-shadow(0 0 18px rgba(233, 164, 235, 0.45));
+}
+
+.project-img {
+  width: 240px;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Project title ────────────────────────────────────────────── */
+.project-title {
+  font-family: var(--font);
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  color: var(--pink);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  -webkit-text-stroke: 0px transparent;
+  transition: -webkit-text-stroke 0.15s, color 0.15s;
+  flex: 1;
+}
+
+.project-title:hover {
+  color: var(--white);
+  -webkit-text-stroke: 1px var(--lavender);
+}
+
+/* For reversed rows, align title text to the right */
+.project-row.reverse .project-title {
+  text-align: right;
 }
 
 /* ── Footer ───────────────────────────────────────────────────── */
@@ -172,7 +247,7 @@ footer {
 .footer-link-block {
   display: flex;
   flex-direction: column;
-  align-items: center;   /* center label over link */
+  align-items: center;
   gap: 5px;
 }
 
@@ -186,7 +261,7 @@ footer {
 .footer-link-block a {
   font-family: var(--font);
   font-size: clamp(0.7rem, 2vw, 0.88rem);
-  color: var(--text);
+  color: var(--white);
   text-decoration: none;
   letter-spacing: 0.02em;
   -webkit-text-stroke: 0px transparent;
@@ -195,7 +270,6 @@ footer {
   text-align: center;
 }
 
-/* Hover: white + lavender stroke 1px */
 .footer-link-block a:hover {
   color: var(--white);
   -webkit-text-stroke: 1px var(--lavender);
@@ -225,10 +299,9 @@ footer {
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ── Responsive ───────────────────────────────────────────────── */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   nav {
-    padding: 18px 20px 0;
-    position: relative;
+    padding: 16px 20px 0;
     flex-wrap: wrap;
   }
 
@@ -240,13 +313,39 @@ footer {
     display: none;
     width: 100%;
     flex-direction: column;
-    gap: 16px;
-    padding: 18px 0 10px;
+    gap: 14px;
+    padding: 16px 0 8px;
     order: 3;
   }
 
   .nav-links.open {
     display: flex;
+  }
+
+  #projects {
+    padding: 48px 24px 60px;
+  }
+
+  .project-row,
+  .project-row.reverse {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .project-image-link {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .project-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+  }
+
+  .project-row.reverse .project-title {
+    text-align: left;
   }
 
   footer {
@@ -262,5 +361,233 @@ footer {
   .footer-link-block {
     align-items: center;
     text-align: center;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   PROJECT PAGE STYLES
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Project main wrapper ─────────────────────────────────────── */
+.project-main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 52px 40px 80px;
+  width: 100%;
+}
+
+/* ── Project name heading ─────────────────────────────────────── */
+.project-name {
+  font-family: var(--font);
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  font-weight: 400;
+  color: var(--white);
+  -webkit-text-stroke: 2px var(--pink);
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-shadow: none;
+  margin-bottom: 44px;
+}
+
+/* ── Hero images (two side-by-side) ──────────────────────────── */
+.project-hero-images {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 56px;
+}
+
+.project-hero-img-wrap {
+  flex: 1;
+  background: #bbb;   /* visible placeholder when no image loaded */
+  line-height: 0;
+  aspect-ratio: 4 / 3;
+}
+
+.project-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: var(--bg);
+}
+
+/* ── Two-column section layout ────────────────────────────────── */
+.two-col-section {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.two-col-section .col {
+  flex: 1;
+}
+
+.problem-goal {
+  margin-bottom: 60px;
+}
+
+/* ── Section labels (pink headings) ──────────────────────────── */
+.proj-section-label {
+  font-family: var(--font);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--pink);
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+
+/* ── Project text (Problem / Goal) ───────────────────────────── */
+.proj-text {
+  font-family: var(--font);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  opacity: 0.9;
+  max-width: 380px;
+}
+
+/* ── Timeline ─────────────────────────────────────────────────── */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  padding-left: 8px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-bottom: 28px;
+}
+
+.timeline-item.last {
+  padding-bottom: 0;
+}
+
+/* Vertical connecting line between dots */
+.timeline-track {
+  position: absolute;
+  left: 9px;           /* centre under the 20px dot (half = 10, minus border = 9) */
+  top: 20px;
+  width: 2px;
+  height: calc(100% - 4px);
+  background: var(--lavender);
+  opacity: 0.35;
+}
+
+/* Pink filled circle dot */
+.timeline-dot {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--pink);
+  margin-right: 18px;
+  margin-top: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-text {
+  font-family: var(--font);
+  font-size: 0.92rem;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  padding-top: 2px;
+  max-width: 320px;
+}
+
+.timeline-text strong {
+  font-weight: 700;
+  color: var(--white);
+}
+
+/* Timeline text styling */
+.timeline-date {
+  color: var(--lavender);
+}
+
+/* ── Tech Stack + GitHub column ───────────────────────────────── */
+.tech-github-col {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+/* ── Tech grid (2 columns of grey tags) ──────────────────────── */
+.tech-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.tech-tag {
+  height: 32px;
+  background: rgba(160, 160, 160, 0.25); /* softer + matches theme */
+  border-radius: 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--font);
+  font-size: 0.75rem;
+  color: var(--white);
+  letter-spacing: 0.04em;
+
+  padding: 0 10px;
+  text-align: center;
+}
+
+.tech-tag:hover {
+  background: rgba(233, 164, 235, 0.2);
+  box-shadow: 0 0 10px rgba(233, 164, 235, 0.3);
+}
+
+/* ── GitHub link block ────────────────────────────────────────── */
+.github-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* The actual link — same hover style as other links */
+.github-link {
+  font-family: var(--font);
+  font-size: clamp(0.72rem, 1.8vw, 0.88rem);
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  letter-spacing: 0.02em;
+  -webkit-text-stroke: 0px transparent;
+  transition: -webkit-text-stroke 0.15s, color 0.15s;
+  word-break: break-all;
+}
+
+.github-link:hover {
+  color: var(--white);
+  -webkit-text-stroke: 1px var(--lavender);
+}
+
+/* ── Responsive – project page ────────────────────────────────── */
+@media (max-width: 700px) {
+  .project-main {
+    padding: 36px 20px 60px;
+  }
+
+  .project-hero-images {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .two-col-section {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .timeline-tech .tech-github-col {
+    gap: 40px;
   }
 }

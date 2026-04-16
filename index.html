@@ -9,16 +9,13 @@
 </head>
 <body>
 
-  <canvas id="bg-canvas"></canvas>
-
-  <div class="page">
-
-    <!-- Navigation -->
+  <!-- ── Sticky Header ── -->
+  <header id="site-header">
     <nav>
       <ul class="nav-links" id="navLinks">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="#home">Home</a></li>
         <li><a href="#">Resume</a></li>
-        <li><a href="#">Projects</a></li>
+        <li><a href="#projects">Projects</a></li>
       </ul>
 
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -29,11 +26,14 @@
         <img src="logo.png" alt="Kedixit Logo" />
       </div>
     </nav>
-
     <div class="nav-rule"></div>
+  </header>
 
-    <!-- Hero -->
-    <main>
+  <!-- ── Scrollable Content ── -->
+  <main>
+
+    <!-- Home Section -->
+    <section id="home">
       <div class="hero">
         <h1 class="hero-name">KIMAYA DIXIT</h1>
         <div class="hero-roles">
@@ -43,35 +43,68 @@
         </div>
         <p class="hero-bio">
           I am passionate about exploring new technologies and innovating in areas of designing
-          and developing. I am highly adaptable project domains and welcome new challenges
+          and developing. I am highly adaptable to different project domains and welcome new challenges
           with open arms.
         </p>
       </div>
-    </main>
+    </section>
 
-    <!-- Footer -->
-    <footer>
-      <div class="footer-rule"></div>
-      <div class="footer-links">
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2 class="section-heading">Projects</h2>
 
-        <div class="footer-link-block">
-          <span class="label">GitHub</span>
-          <a href="https://github.com/KimayaDixit" target="_blank" rel="noopener noreferrer">
-            https://github.com/KimayaDixit
+      <div class="projects-list">
+
+        <!-- Project 1 — image left, title right -->
+        <div class="project-row">
+          <a href="project1.html" class="project-image-link">
+            <img src="proj1.jpg" alt="Project 1" class="project-img" />
           </a>
+          <a href="project1.html" class="project-title">Zylo — Collaborative Music Platform</a>
         </div>
 
-        <div class="footer-link-block">
-          <span class="label">LinkedIn</span>
-          <a href="https://www.linkedin.com/in/kimaya-dixit-39566035b" target="_blank" rel="noopener noreferrer">
-            www.linkedin.com/in/kimaya-dixit-39566035b
+        <!-- Project 2 — title left, image right -->
+        <div class="project-row reverse">
+          <a href="project2.html" class="project-image-link">
+            <img src="proj2.png" alt="Project 2" class="project-img" />
           </a>
+          <a href="project2.html" class="project-title">IRCTC App Redesign</a>
+        </div>
+
+        <!-- Project 3 — image left, title right -->
+        <div class="project-row">
+          <a href="project3.html" class="project-image-link">
+            <img src="proj3.jpg" alt="Project 3" class="project-img" />
+          </a>
+          <a href="project3.html" class="project-title">Online Library Management System</a>
         </div>
 
       </div>
-    </footer>
+    </section>
 
-  </div>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="footer-rule"></div>
+    <div class="footer-links">
+
+      <div class="footer-link-block">
+        <span class="label">GitHub</span>
+        <a href="https://github.com/KimayaDixit" target="_blank" rel="noopener noreferrer">
+          https://github.com/KimayaDixit
+        </a>
+      </div>
+
+      <div class="footer-link-block">
+        <span class="label">LinkedIn</span>
+        <a href="https://www.linkedin.com/in/kimaya-dixit-39566035b" target="_blank" rel="noopener noreferrer">
+          www.linkedin.com/in/kimaya-dixit-39566035b
+        </a>
+      </div>
+
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
