@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Title 1 – Kimaya Dixit</title>
+  <title>Project 2 – Kimaya Dixit</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet" />
 </head>
 <body data-page="project">
 
+  <!-- ── Sticky Header ── -->
   <header id="site-header">
     <nav>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html#home">Home</a></li>
-        <li><a href="#">Resume</a></li>
+        <li><a href="KimayaDixit_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
         <li><a href="index.html#projects">Projects</a></li>
       </ul>
 
@@ -28,109 +29,191 @@
     <div class="nav-rule"></div>
   </header>
 
+  <!-- ── Project Content ── -->
   <main class="project-main">
 
+    <!-- Project Name -->
     <h1 class="project-name">IRCTC App Redesign</h1>
 
-    <!-- Hero Images -->
-    <div class="project-hero-images">
-      <div class="project-hero-img-wrap">
-        <img src="project2-img1.png" alt="Project image 1" class="project-hero-img" />
-      </div>
-      <div class="project-hero-img-wrap">
-        <img src="project2-img2.png" alt="Project image 2" class="project-hero-img" />
+    <!-- Hero iPhone Mockup with Video -->
+    <div class="p2-hero-mockup-wrap">
+      <div class="iphone-mockup">
+        <div class="iphone-shell">
+          <div class="iphone-notch"></div>
+          <div class="iphone-screen iphone-screen--video">
+            <video src="sr.mp4" autoplay muted loop playsinline></video>
+          </div>
+          <div class="iphone-home-bar"></div>
+        </div>
       </div>
     </div>
 
-<div class="two-col-section problem-goal">
+    <!-- Why IRCTC? -->
+    <div class="p2-centered-section">
+      <h2 class="p2-section-heading">Why IRCTC?</h2>
+      <p class="proj-text p2-centered-text">
+        India's railway system is one of the busiest in the world, with millions of people using trains every day. Whether it's for work, vacations, or visiting family, train travel is a huge part of life. By redesigning the app's UX, we make train travel more convenient, accessible, and enjoyable for millions across the country.
+      </p>
+    </div>
 
-  <div class="col">
-    <h3 class="proj-section-label">The Problem</h3>
-    <p class="proj-text">
-      The existing IRCTC mobile app presents a cumbersome and outdated user experience, particularly in critical areas such as the landing page, home page, and ticket booking process. Users often report difficulty in navigation, lack of transparency in fare details, limited payment options, and a confusing flow when adding travelers. These issues contribute to user frustration, reduced engagement, and increased reliance on third-party booking platforms. 
-    </p>
-  </div>
+    <!-- The Problem -->
+    <div class="p2-centered-section">
+      <h2 class="p2-section-heading">The Problem</h2>
+      <p class="proj-text p2-centered-text">
+        The existing IRCTC mobile app presents a cumbersome and outdated user experience, particularly in critical areas such as the landing page, home page, and ticket booking process. Users often report difficulty in navigation, lack of transparency in fare details, limited payment options, and a confusing flow when adding travelers. These issues contribute to user frustration, reduced engagement, and increased reliance on third-party booking platforms.
+      </p>
 
-  <div class="col">
-    <h3 class="proj-section-label">The Goal</h3>
-    <p class="proj-text">
-      The goal of the IRCTC app redesign is to enhance the user experience by simplifying navigation, clarifying booking steps and fare details, and offering greater flexibility in adding travelers and choosing payment options. By improving the landing page, home interface, and ticket booking flow, the app aims to increase user satisfaction and drive more successful bookings through the official platform.
-    </p>
-  </div>
+      <!-- Research image group: 2 + 1 + 2 -->
+      <div class="p2-image-group">
+        <div class="p2-img-row">
+          <a href="image 2.png" class="p2-img-link">
+            <img src="image 2.png" class="p2-img">
+          </a>
+          <a href="image 3.png" class="p2-img-link">
+            <img src="image 3.png"  class="p2-img">
+          </a>
+        </div>
+        <!-- Row 2: 1 image -->
+        <div class="p2-img-row p2-img-row--center">
+          <a href="image 1.png" class="p2-img-link">
+            <img src="image 1.png" class="p2-img">
+          </a>
+        </div>
+        <!-- Row 3: 2 images -->
+       <div class="p2-img-row">
+          <a href="image 4.png" class="p2-img-link">
+            <img src="image 4.png" class="p2-img">
+          </a>
+          <a href="image 5.png" class="p2-img-link">
+            <img src="image 5.png" class="p2-img">
+          </a>
+        </div>
+      </div>
+    </div>
 
-</div>
+    <!-- Insights From Research -->
+    <div class="p2-centered-section">
+      <h2 class="p2-section-heading">Insights From Research</h2>
 
-    <div class="two-col-section timeline-tech">
+      <div class="p2-insights-grid">
+        <div class="p2-insight-block">
+          <h3 class="proj-section-label">Poor Visual Design and Layout</h3>
+          <p class="proj-text">
+            A large majority rated the app's home and sign-up pages poorly. Users feel the app looks outdated and cluttered, making it hard to focus on important actions. A lack of modern UI elements reduces user trust and discourages usage, especially when compared to competing travel apps.
+          </p>
+        </div>
+        <div class="p2-insight-block">
+          <h3 class="proj-section-label">Complex Booking Flow</h3>
+          <p class="proj-text">
+            Users find it difficult to add travelers, view fare details, and complete bookings without confusion. The booking process involves too many steps with unclear guidance, leading to frustration and a higher chance of drop-offs, even among users who travel frequently and are familiar with online bookings.
+          </p>
+        </div>
+      </div>
+    </div>
 
-      <!-- Project Timeline -->
-      <div class="col">
-        <h3 class="proj-section-label">Project Timeline</h3>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-track"></div>
-            <p class="timeline-text">
-              <span class="timeline-date">10/05/2025:</span>
-              <strong>Conducted survey through Google forms</strong>
-            </p>
+    <!-- Our Solution -->
+    <div class="p2-centered-section">
+      <h2 class="p2-section-heading">Our Solution</h2>
+      <p class="proj-text p2-centered-text">
+        Enhance the user experience by simplifying navigation, clarifying booking steps and fare details, and offering greater flexibility in adding travelers and choosing payment options. By improving the landing page, home interface, and ticket booking flow, the app aims to increase user satisfaction and drive more successful bookings through the official platform.
+      </p>
+
+      <!-- 4 iPhone mockups with images -->
+      <div class="p2-mockup-row">
+        <div class="iphone-mockup iphone-mockup--sm">
+          <div class="iphone-shell">
+            <div class="iphone-notch"></div>
+            <div class="iphone-screen">
+              <img src="project2_frame1.png" alt="Solution screen 1" />
+            </div>
+            <div class="iphone-home-bar"></div>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-track"></div>
-            <p class="timeline-text">
-              <span class="timeline-date">15/05/2025:</span>
-              <strong>Completed primary and secondary research</strong>
-            </p>
+        </div>
+        <div class="iphone-mockup iphone-mockup--sm">
+          <div class="iphone-shell">
+            <div class="iphone-notch"></div>
+            <div class="iphone-screen">
+              <img src="project2-frame2.png" alt="Solution screen 2" />
+            </div>
+            <div class="iphone-home-bar"></div>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-track"></div>
-            <p class="timeline-text">
-              <span class="timeline-date">21/05/2025:</span>
-              <strong>Finalized features and flow</strong>
-            </p>
+        </div>
+        <div class="iphone-mockup iphone-mockup--sm">
+          <div class="iphone-shell">
+            <div class="iphone-notch"></div>
+            <div class="iphone-screen">
+              <img src="project2-frame3.png" alt="Solution screen 3" />
+            </div>
+            <div class="iphone-home-bar"></div>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-track"></div>
-            <p class="timeline-text">
-              <span class="timeline-date">12/12/2025:</span>
-              <strong>Completed designing all high-fidelity wireframes</strong>
-            </p>
-          </div>
-          <div class="timeline-item last">
-            <div class="timeline-dot"></div>
-            <p class="timeline-text">
-              <span class="timeline-date">15/12/2025:</span>
-              <strong>Finished prototype</strong>
-            </p>
+        </div>
+        <div class="iphone-mockup iphone-mockup--sm">
+          <div class="iphone-shell">
+            <div class="iphone-notch"></div>
+            <div class="iphone-screen">
+              <img src="projectt2-frame4.png" alt="Solution screen 4" />
+            </div>
+            <div class="iphone-home-bar"></div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Tech Stack + GitHub Link -->
-      <div class="col tech-github-col">
+    <!-- Project Timeline -->
+    <div class="p2-centered-section">
+      <h2 class="p2-section-heading">Project Timeline</h2>
 
-        <div class="tech-stack-block">
-          <h3 class="proj-section-label">Tech Stack</h3>
-          <div class="tech-grid">
-            <div class="tech-tag">Figma</div>
-            <div class="tech-tag">Canva</div>
+      <div class="timeline-h">
+        <div class="timeline-h-track"></div>
+
+        <div class="timeline-h-item">
+          <div class="timeline-h-dot"></div>
+          <div class="timeline-h-label">
+            <span class="timeline-date">20/08/2025:</span>
+            <strong>Literature review</strong>
           </div>
-        </div>        
-
-        <div class="github-block">
-          <h3 class="proj-section-label">GitHub Link</h3>
-          <a
-            href="https://github.com/KimayaDixit"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="github-link"
-          >https://github.com/KimayaDixit/project-name</a>
         </div>
 
-      </div>
+        <div class="timeline-h-item">
+          <div class="timeline-h-dot"></div>
+          <div class="timeline-h-label">
+            <span class="timeline-date">03/09/2025:</span>
+            <strong>User research</strong>
+          </div>
+        </div>
 
+        <div class="timeline-h-item">
+          <div class="timeline-h-dot"></div>
+          <div class="timeline-h-label">
+            <span class="timeline-date">17/09/2025:</span>
+            <strong>Wireframes</strong>
+          </div>
+        </div>
+
+        <div class="timeline-h-item">
+          <div class="timeline-h-dot"></div>
+          <div class="timeline-h-label">
+            <span class="timeline-date">01/10/2025:</span>
+            <strong>Prototyping</strong>
+          </div>
+        </div>
+
+        <div class="timeline-h-item">
+          <div class="timeline-h-dot"></div>
+          <div class="timeline-h-label">
+            <span class="timeline-date">15/10/2025:</span>
+            <strong>Usability testing</strong>
+          </div>
+        </div>
+
+        <div class="timeline-h-item">
+          <div class="timeline-h-dot"></div>
+          <div class="timeline-h-label">
+            <span class="timeline-date">22/10/2025:</span>
+            <strong>Final design</strong>
+          </div>
+        </div>
+      </div>
     </div>
 
   </main>
